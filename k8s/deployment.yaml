@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-parson-six
+  labels:
+    app: java-parson-six
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: java-parson-six
+  template:
+    metadata:
+      labels:
+        app: java-parson-six
+    spec:
+      containers:
+        - name: java-parson-six
+          image: docker.io/alexsotoharness/java-parson-six:latest
+          ports:
+            - containerPort: 8080
